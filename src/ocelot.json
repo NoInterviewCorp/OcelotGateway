@@ -36,6 +36,7 @@
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
     },
 
+
     
 
     {
@@ -102,14 +103,14 @@
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
     },
     {
-      "DownstreamPathTemplate": "/Technology/{TechnologyName}",
+      "DownstreamPathTemplate": "/Technology/{technologyName}",
       "DownstreamScheme": "http",
       "ServiceName": "sme",
       "UpstreamPathTemplate": "/ParticularTechnology/",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
     },
     {
-      "DownstreamPathTemplate": "/Technology/{TechnologyId}",
+      "DownstreamPathTemplate": "/Technology/{technologyId}",
       "DownstreamScheme": "http",
       "ServiceName": "sme",
       "UpstreamPathTemplate": "/DeleteParticularTechnology/",
