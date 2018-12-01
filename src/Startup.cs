@@ -16,6 +16,7 @@ using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Http;
 using Consul;
 using Chilkat;
+using Ocelot.Provider.Consul;
 
 namespace GatewayApi
 {
@@ -32,7 +33,7 @@ namespace GatewayApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddOcelot(Configuration);
+            services.AddOcelot(Configuration).AddConsul();;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

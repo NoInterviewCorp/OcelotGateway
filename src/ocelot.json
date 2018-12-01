@@ -1,32 +1,39 @@
 {
-    "ReRoutes": [
-        {
-            "DownstreamPathTemplate": "/api/{catchAll}/",
-            "DownstreamScheme": "http",
-            "DownstreamHostAndPorts": [
-                    {
-                        "Host": "localhost",
-                        "Port": 7001
-                    }
-                ],
-            "UpstreamPathTemplate": "/catalog-api/{catchAll}"
-          
-        },
-        {
-            "DownstreamPathTemplate": "/api/{catchAll}/",
-            "DownstreamScheme": "http",
-            "DownstreamHostAndPorts": [
-                    {
-                        "Host": "localhost",
-                        "Port": 7002
-                    }
-                ],
-            "UpstreamPathTemplate": "/orders-api/{catchAll}"
-          
-        }
-    ],
-
-    "GlobalConfiguration": {
-        "BaseUrl": "http://localhost:7000"
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/api/questions",
+      "DownstreamScheme": "http",
+      "ServiceName": "QuestionBank",
+      "UpstreamPathTemplate": "/questionbank/",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/questions/domain/",
+      "DownstreamScheme": "http",
+      "ServiceName": "QuestionBank",
+      "UpstreamPathTemplate": "/questionbank/domain/",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/questions/domain/{url}",
+      "DownstreamScheme": "http",
+      "ServiceName": "QuestionBank",
+      "UpstreamPathTemplate": "/questionbank/domain/{url}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/conceptmap/",
+      "DownstreamScheme": "http",
+      "ServiceName": "ConceptMap",
+      "UpstreamPathTemplate": "/conceptmap/",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
     }
+  ],
+  "GlobalConfiguration": {
+    "ServiceDiscoveryProvider": {
+      "Host": "consul",
+      "Port": 8500,
+      "Type": "Consul"
+    }
+  }
 }
