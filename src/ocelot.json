@@ -1,33 +1,122 @@
 {
   "ReRoutes": [
     {
-      "DownstreamPathTemplate": "/api/questions",
+      "DownstreamPathTemplate": "/api/Values",
       "DownstreamScheme": "http",
-      "ServiceName": "QuestionBank",
-      "UpstreamPathTemplate": "/questionbank/",
+      "ServiceName": "user_profile",
+      "UpstreamPathTemplate": "/AllUserData/",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
     },
     {
-      "DownstreamPathTemplate": "/api/questions/domain/",
+      "DownstreamPathTemplate": "/api/Values/{_id}",
       "DownstreamScheme": "http",
-      "ServiceName": "QuestionBank",
-      "UpstreamPathTemplate": "/questionbank/domain/",
+      "ServiceName": "user_profile",
+      "UpstreamPathTemplate": "/UserData/",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
     },
     {
-      "DownstreamPathTemplate": "/api/questions/domain/{url}",
+      "DownstreamPathTemplate": "/api/Values/{_id}/resource/{resourceId}",
       "DownstreamScheme": "http",
-      "ServiceName": "QuestionBank",
-      "UpstreamPathTemplate": "/questionbank/domain/{url}",
+      "ServiceName": "user_profile",
+      "UpstreamPathTemplate": "/GetResouceStatus/",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
     },
     {
-      "DownstreamPathTemplate": "/api/conceptmap/",
+      "DownstreamPathTemplate": "/api/Values/isCheck",
       "DownstreamScheme": "http",
-      "ServiceName": "ConceptMap",
-      "UpstreamPathTemplate": "/conceptmap/",
+      "ServiceName": "user_profile",
+      "UpstreamPathTemplate": "/PostResouceStatus/",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Values/UploadsProfilePic",
+      "DownstreamScheme": "http",
+      "ServiceName": "user_profile",
+      "UpstreamPathTemplate": "/UploadsProfilePic/",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
+    },
+
+    
+
+    {
+      "DownstreamPathTemplate": "/Concept",
+      "DownstreamScheme": "http",
+      "ServiceName": "sme",
+      "UpstreamPathTemplate": "/AllConcepts/",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
+    },
+    {
+      "DownstreamPathTemplate": "/Concept/{conceptName}",
+      "DownstreamScheme": "http",
+      "ServiceName": "sme",
+      "UpstreamPathTemplate": "/ParticularConcepts/",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
+    },
+    {
+      "DownstreamPathTemplate": "/LearningPlan",
+      "DownstreamScheme": "http",
+      "ServiceName": "sme",
+      "UpstreamPathTemplate": "/AllLearningPlan/",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
+    },
+    {
+      "DownstreamPathTemplate": "/LearningPlan/{text}",
+      "DownstreamScheme": "http",
+      "ServiceName": "sme",
+      "UpstreamPathTemplate": "/ParticularLearningPlan/",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
+    },
+    {
+      "DownstreamPathTemplate": "/LearningPlan/{learningPlanId}",
+      "DownstreamScheme": "http",
+      "ServiceName": "sme",
+      "UpstreamPathTemplate": "/ManuplateLearningPlan/",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
+    },
+    {
+      "DownstreamPathTemplate": "/Resource",
+      "DownstreamScheme": "http",
+      "ServiceName": "sme",
+      "UpstreamPathTemplate": "/AllResourcePlan/",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
+    },
+    {
+      "DownstreamPathTemplate": "/Resource/{text}",
+      "DownstreamScheme": "http",
+      "ServiceName": "sme",
+      "UpstreamPathTemplate": "/ParticularResoucegPlan/",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
+    },
+    {
+      "DownstreamPathTemplate": "/Resource/{resourceId}",
+      "DownstreamScheme": "http",
+      "ServiceName": "sme",
+      "UpstreamPathTemplate": "/ManuplateResoucePlan/",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
+    },
+    {
+      "DownstreamPathTemplate": "/Technology",
+      "DownstreamScheme": "http",
+      "ServiceName": "sme",
+      "UpstreamPathTemplate": "/AllTechnology/",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
+    },
+    {
+      "DownstreamPathTemplate": "/Technology/{TechnologyName}",
+      "DownstreamScheme": "http",
+      "ServiceName": "sme",
+      "UpstreamPathTemplate": "/ParticularTechnology/",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
+    },
+    {
+      "DownstreamPathTemplate": "/Technology/{TechnologyId}",
+      "DownstreamScheme": "http",
+      "ServiceName": "sme",
+      "UpstreamPathTemplate": "/DeleteParticularTechnology/",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
     }
+    
+    
   ],
   "GlobalConfiguration": {
     "ServiceDiscoveryProvider": {
