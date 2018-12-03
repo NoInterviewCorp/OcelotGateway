@@ -1,8 +1,10 @@
+version: "3"
 services: 
   consul: 
     image: consul
     restart: always
-    network_mode: host
+    networks: 
+      - potentiometer-gateway-network
     ports:
       - 0.0.0.0:8500:8500
   gateway: 
@@ -11,7 +13,8 @@ services:
     depends_on: 
       - consul
       - registrator
-    network_mode: host
+    networks: 
+      - potentiometer-gateway-network
   registrator: 
     image: gliderlabs/registrator
     restart: always
@@ -19,6 +22,10 @@ services:
       - "/var/run/docker.sock:/tmp/docker.sock"
     depends_on:
       - consul
-    network_mode: host
+    networks: 
+      - potentiometer-gateway-network
     command: "-internal consul://localhost:8500"
-version: "3"
+networks:
+  potentiometer-gateway-network:
+    name: potentiometer-network
+
