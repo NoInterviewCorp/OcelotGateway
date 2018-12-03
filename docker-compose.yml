@@ -3,6 +3,8 @@ services:
     image: consul
     restart: always
     network_mode: host
+    ports:
+      - 0.0.0.0:8500:8500
   gateway: 
     build: 
       context: ./src

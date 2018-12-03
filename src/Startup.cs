@@ -45,7 +45,7 @@ namespace GatewayApi
             }
             else
             {
-                app.UseHsts();
+//                app.UseHsts();
             }
 
             app.UseCors(x => x
@@ -82,8 +82,8 @@ namespace GatewayApi
                 }
             });
 
-            app.UseHttpsRedirection();
-            app.UseMvc();
+           //  app.UseHttpsRedirection();
+  //          app.UseMvc();
             await app.UseOcelot();
         }
     }
