@@ -67,6 +67,7 @@ namespace GatewayApi
                 {
                     Microsoft.AspNetCore.Http.IRequestCookieCollection cookies = context.Request.Cookies;
                     var token = cookies["TOKEN"];
+                    Console.WriteLine(token);
                     // var token = context.Request.Cookies["TOKEN"] ;
                     // var token = context.Request.Headers["Authorization"];
                     Chilkat.Global glob = new Chilkat.Global();
