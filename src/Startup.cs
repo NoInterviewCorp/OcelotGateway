@@ -74,9 +74,9 @@ namespace GatewayApi
 
                     using (var client = new ConsulClient())
                     {
-                        // string ConsulIpHost = "http://consul:8500";
-                        // client.Config.Address = new Uri(ConsulIpHost);
-                        client.Config.Address = new Uri("http://172.23.238.173:8500");
+                        string ConsulIpHost = "http://consul:8500";
+                        client.Config.Address = new Uri(ConsulIpHost);
+                        // client.Config.Address = new Uri("http://172.23.238.173:8500");
                         var getpair2 = client.KV.Get("myPublicKey");
                         string secret = System.Text.Encoding.UTF8.GetString(getpair2.Result.Response.Value);
                         Chilkat.Rsa rsaExportedPublicKey = new Chilkat.Rsa();
