@@ -1,6 +1,5 @@
 {
   "ReRoutes": [
-
     {
       "DownstreamPathTemplate": "/signIn",
       "DownstreamScheme": "http",
