@@ -45,7 +45,7 @@ namespace GatewayApi
             }
             else
             {
-//                app.UseHsts();
+                //                app.UseHsts();
             }
 
             app.UseCors(x => x
@@ -55,35 +55,48 @@ namespace GatewayApi
                 .AllowCredentials()
                 );
 
-            
-            app.Use(async (context, next) => {
-                var token = context.Request.Headers["Authorization"];
-                Chilkat.Global glob = new Chilkat.Global();
-                glob.UnlockBundle("Anything for 30-day trial");
 
-                using (var client = new ConsulClient())
+            app.Use(async (context, next) =>
+            {
+                if (context.Request.Path=="/" || context.Request.Path.Value.Contains("/signIn") || context.Request.Path.Value.Contains("/signUp") || context.Request.Path.Value.Contains("/socialSignIn"))
                 {
-                    client.Config.Address = new Uri("http://172.23.238.173:8500");
-                    var getpair2 = client.KV.Get("myPublicKey");
-                    string secret = System.Text.Encoding.UTF8.GetString(getpair2.Result.Response.Value);
-                    Chilkat.Rsa rsaExportedPublicKey = new Chilkat.Rsa();
-                    rsaExportedPublicKey.ImportPublicKey(secret);
-                    var publickey = rsaExportedPublicKey.ExportPublicKeyObj();
-                    var jwt = new Chilkat.Jwt();
-                    if (jwt.VerifyJwtPk(token, publickey)&&(jwt.IsTimeValid(token,0)))
+                    await next();
+                }
+                else
+                {
+                    Microsoft.AspNetCore.Http.IRequestCookieCollection cookies = context.Request.Cookies;
+                    var token = cookies["TOKEN"];
+                    // var token = context.Request.Cookies["TOKEN"] ;
+                    // var token = context.Request.Headers["Authorization"];
+                    Chilkat.Global glob = new Chilkat.Global();
+                    glob.UnlockBundle("Anything for 30-day trial");
+
+                    using (var client = new ConsulClient())
                     {
-                        await next();
-                    }
-                    else
-                    {
-                        context.Response.StatusCode = 403;
-                        await context.Response.WriteAsync("UnAuthorized");
+                        // string ConsulIpHost = "http://consul:8500";
+                        // client.Config.Address = new Uri(ConsulIpHost);
+                        client.Config.Address = new Uri("http://172.23.238.173:8500");
+                        var getpair2 = client.KV.Get("myPublicKey");
+                        string secret = System.Text.Encoding.UTF8.GetString(getpair2.Result.Response.Value);
+                        Chilkat.Rsa rsaExportedPublicKey = new Chilkat.Rsa();
+                        rsaExportedPublicKey.ImportPublicKey(secret);
+                        var publickey = rsaExportedPublicKey.ExportPublicKeyObj();
+                        var jwt = new Chilkat.Jwt();
+                        if (jwt.VerifyJwtPk(token, publickey) && (jwt.IsTimeValid(token, 0)))
+                        {
+                            await next();
+                        }
+                        else
+                        {
+                            context.Response.StatusCode = 403;
+                            await context.Response.WriteAsync("UnAuthorized");
+                        }
                     }
                 }
             });
 
-           //  app.UseHttpsRedirection();
-  //          app.UseMvc();
+            //  app.UseHttpsRedirection();
+            //          app.UseMvc();
             await app.UseOcelot();
         }
     }

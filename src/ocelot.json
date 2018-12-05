@@ -1,5 +1,40 @@
 {
   "ReRoutes": [
+
+    {
+      "DownstreamPathTemplate": "/signIn",
+      "DownstreamScheme": "http",
+      "ServiceName": "Authentication",
+      "UpstreamPathTemplate": "/signIn",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
+    },
+    {
+      "DownstreamPathTemplate": "/signUp",
+      "DownstreamScheme": "http",
+      "ServiceName": "Authentication",
+      "UpstreamPathTemplate": "/signUp",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
+    },
+    {
+      "DownstreamPathTemplate": "/socialSignIn",
+      "DownstreamScheme": "http",
+      "ServiceName": "Authentication",
+      "UpstreamPathTemplate": "/socialSignIn",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
+    },
+
+
+    {
+      "DownstreamPathTemplate": "/",
+      "DownstreamScheme": "http",
+      "ServiceName": "potentiometer-authentication",
+      "UpstreamPathTemplate": "/",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
+    },
+
+
+
+
     {
       "DownstreamPathTemplate": "/api/Values",
       "DownstreamScheme": "http",
@@ -121,9 +156,9 @@
   ],
   "GlobalConfiguration": {
     "ServiceDiscoveryProvider": {
-      "Host": "Consul",
+      "Host": "consul",
       "Port": 8500,
-      "Type": "Consul"
+      "Type": "consul"
     }
   }
 }

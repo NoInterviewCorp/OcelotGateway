@@ -11,7 +11,8 @@ services:
     build: 
       context: ./src
     ports:
-      - "7000:7000"
+      - "80:7000"
+
     depends_on: 
       - consul
       - registrator
