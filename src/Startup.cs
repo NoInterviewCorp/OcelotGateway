@@ -58,6 +58,7 @@ namespace GatewayApi
 
             app.Use(async (context, next) =>
             {
+                Console.WriteLine(context.Request.Path.Value);
                 if (context.Request.Path.Value=="/" || context.Request.Path.Value == "/auth" || context.Request.Path.Value.Contains("/signIn") || context.Request.Path.Value.Contains("/signUp") || context.Request.Path.Value.Contains("/socialSignIn"))
                 {
                     await next();
