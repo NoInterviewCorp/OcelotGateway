@@ -83,8 +83,9 @@ namespace GatewayApi
                         Chilkat.Rsa rsaExportedPublicKey = new Chilkat.Rsa();
                         rsaExportedPublicKey.ImportPublicKey(secret);
                         var publickey = rsaExportedPublicKey.ExportPublicKeyObj();
+                        Console.WriteLine(publickey);
                         var jwt = new Chilkat.Jwt();
-                        if (jwt.VerifyJwtPk(token, publickey) && (jwt.IsTimeValid(token, 0)))
+                        if (jwt.VerifyJwtPk(token, publickey))
                         {
                             await next();
                         }
