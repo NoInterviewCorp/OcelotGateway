@@ -22,8 +22,6 @@
       "UpstreamPathTemplate": "/socialSignIn",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
     },
-
-
     {
       "DownstreamPathTemplate": "/",
       "DownstreamScheme": "http",
@@ -31,7 +29,6 @@
       "UpstreamPathTemplate": "/",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
     },
-
     {
       "DownstreamPathTemplate": "/potentiometer/{catch}",
       "DownstreamScheme": "http",
@@ -39,9 +36,6 @@
       "UpstreamPathTemplate": "/potentiometer/{catch}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
     },
-
-
-
     {
       "DownstreamPathTemplate": "/api/Values",
       "DownstreamScheme": "http",
