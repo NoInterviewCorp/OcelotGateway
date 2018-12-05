@@ -58,7 +58,7 @@ namespace GatewayApi
 
             app.Use(async (context, next) =>
             {
-                if (context.Request.Path.Value.Contains("/potentiometer") || context.Request.Path.Value.Contains("/signIn") || context.Request.Path.Value.Contains("/signUp") || context.Request.Path.Value.Contains("/socialSignIn"))
+                if (context.Request.Path.Value=="/" || context.Request.Path.Value.Contains("/signIn") || context.Request.Path.Value.Contains("/signUp") || context.Request.Path.Value.Contains("/socialSignIn"))
                 {
                     await next();
                 }
