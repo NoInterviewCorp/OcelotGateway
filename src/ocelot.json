@@ -28,7 +28,15 @@
       "DownstreamPathTemplate": "/",
       "DownstreamScheme": "http",
       "ServiceName": "potentiometer-authentication",
-      "UpstreamPathTemplate": "/",
+      "UpstreamPathTemplate": "/potentiometer/",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
+    },
+
+    {
+      "DownstreamPathTemplate": "/potentiometer/{catch}",
+      "DownstreamScheme": "http",
+      "ServiceName": "potentiometer-authentication",
+      "UpstreamPathTemplate": "/potentiometer/{catch}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
     },
 
