@@ -33,6 +33,14 @@
     },
 
 
+    {
+      "DownstreamPathTemplate": "/",
+      "DownstreamScheme": "http",
+      "ServiceName": "potentiometer-contributor-learner-frontend",
+      "UpstreamPathTemplate": "/",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
+    },
+
 
 
     {
