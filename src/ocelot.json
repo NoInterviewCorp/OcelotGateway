@@ -21,23 +21,7 @@
       "UpstreamPathTemplate": "/socialSignIn",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
     },
-    {
-      "DownstreamPathTemplate": "/auth/{catchAll}",
-      "DownstreamScheme": "http",
-      "ServiceName": "potentiometer-authentication",
-      "UpstreamPathTemplate": "/auth/{catchAll}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
-    },
-    {
-      "DownstreamPathTemplate": "/profile/{catchAll}",
-      "DownstreamScheme": "http",
-      "ServiceName": "potentiometer-contributor-learner-frontend",
-      "UpstreamPathTemplate": "/profile/{catchAll}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
-    },
 
-
-    
     {
       "DownstreamPathTemplate": "/",
       "DownstreamScheme": "http",
@@ -46,12 +30,37 @@
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
     },
     {
-      "DownstreamPathTemplate": "/potentiometer/{catch}",
+      "DownstreamPathTemplate": "/auth",
       "DownstreamScheme": "http",
       "ServiceName": "potentiometer-authentication",
-      "UpstreamPathTemplate": "/potentiometer/{catch}",
+      "UpstreamPathTemplate": "/auth",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
     },
+    {
+      "DownstreamPathTemplate": "/auth/{catchAll}",
+      "DownstreamScheme": "http",
+      "ServiceName": "potentiometer-authentication",
+      "UpstreamPathTemplate": "/auth/{catchAll}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
+    },
+
+    
+    {
+      "DownstreamPathTemplate": "/profile/{catchAll}",
+      "DownstreamScheme": "http",
+      "ServiceName": "potentiometer-contributor-learner-frontend",
+      "UpstreamPathTemplate": "/profile/{catchAll}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
+    },
+    {
+      "DownstreamPathTemplate": "/profile",
+      "DownstreamScheme": "http",
+      "ServiceName": "potentiometer-contributor-learner-frontend",
+      "UpstreamPathTemplate": "/profile",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
+    },
+        
+    
     {
       "DownstreamPathTemplate": "/api/Values",
       "DownstreamScheme": "http",
