@@ -93,7 +93,7 @@ namespace GatewayApi
                     }
                 }
             });
-            // app.UseWebSockets();
+            app.UseWebSockets();
             app.UseOcelot().Wait();
         }
     }
