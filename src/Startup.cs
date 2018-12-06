@@ -43,17 +43,13 @@ namespace GatewayApi
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                //                app.UseHsts();
-            }
 
             app.UseCors(x => x
                 .AllowAnyOrigin()
                 .AllowAnyMethod()
                 .AllowAnyHeader()
                 .AllowCredentials()
-                );
+            );
 
 
             app.Use(async (context, next) =>
@@ -97,15 +93,7 @@ namespace GatewayApi
                     }
                 }
             });
-
-            //  app.UseHttpsRedirection();
-            //          app.UseMvc();
-
-
-            // await app.UseOcelot();
-
-            app.UseWebSockets();
-            // app.UseOcelot().Wait();
+            // app.UseWebSockets();
             app.UseOcelot().Wait();
 
         }
