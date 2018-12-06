@@ -21,7 +21,6 @@
       "UpstreamPathTemplate": "/socialSignIn",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
     },
-
     {
       "DownstreamPathTemplate": "/",
       "DownstreamScheme": "http",
@@ -43,8 +42,6 @@
       "UpstreamPathTemplate": "/auth/{catchAll}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
     },
-
-    
     {
       "DownstreamPathTemplate": "/profile/{catchAll}",
       "DownstreamScheme": "http",
@@ -90,10 +87,10 @@
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
     },
     {
-      "DownstreamPathTemplate": "/Values/status/{catchAll}/resource/{catchAll}",
+      "DownstreamPathTemplate": "/Values/status/{catchA}/resource/{catchB}",
       "DownstreamScheme": "http",
       "ServiceName": "user_profile",
-      "UpstreamPathTemplate": "/Values/status/{catchAll}/resource/{catchAll}",
+      "UpstreamPathTemplate": "/Values/status/{catchA}/resource/{catchB}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
     },
     {
