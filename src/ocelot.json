@@ -60,7 +60,7 @@
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
     },
 
-    
+
 
 
     {
@@ -94,13 +94,6 @@
       "DownstreamScheme": "http",
       "ServiceName": "user_profile",
       "UpstreamPathTemplate": "/Values/status/{catchAll}/resource/{catchAll}",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
-    },
-    {
-      "DownstreamPathTemplate": "/Values/{catchAll}",
-      "DownstreamScheme": "http",
-      "ServiceName": "user_profile",
-      "UpstreamPathTemplate": "/Values/{catchAll}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
     },
     {
