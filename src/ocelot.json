@@ -61,10 +61,10 @@
 
 
     {
-      "DownstreamPathTemplate":"/{catchAll}",
+      "DownstreamPathTemplate":"/test/{catchAll}",
       "DownstreamScheme": "ws",
       "ServiceName": "QuizEngine",
-      "UpstreamPathTemplate": "/test/{catchAll}",
+      "UpstreamPathTemplate": "/{catchAll}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
     },
 
