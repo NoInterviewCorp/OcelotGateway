@@ -101,11 +101,12 @@ namespace GatewayApi
             //  app.UseHttpsRedirection();
             //          app.UseMvc();
 
-            
+
             // await app.UseOcelot();
 
             app.UseWebSockets();
-            app.UseOcelot().Wait();
+            // app.UseOcelot().Wait();
+            await app.UseOcelot();
 
         }
     }
