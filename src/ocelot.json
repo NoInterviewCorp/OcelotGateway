@@ -28,13 +28,7 @@
       "UpstreamPathTemplate": "/",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
     },
-    {
-      "DownstreamPathTemplate": "/auth",
-      "DownstreamScheme": "http",
-      "ServiceName": "potentiometer-authentication",
-      "UpstreamPathTemplate": "/auth",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
-    },
+    
     
     {
       "DownstreamPathTemplate": "/profile/{catchAll}",
