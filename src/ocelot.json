@@ -153,6 +153,13 @@
       "UpstreamPathTemplate": "/Values/QuizResult/{catchAll}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
     },
+    {
+      "DownstreamPathTemplate": "/Values/UserReport/{catchAll}",
+      "DownstreamScheme": "http",
+      "ServiceName": "user_profile",
+      "UpstreamPathTemplate": "/Values/UserReport/{catchAll}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
+    },
 
 
 
