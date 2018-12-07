@@ -143,7 +143,14 @@
       "DownstreamPathTemplate": "/Values/UploadsProfilePic",
       "DownstreamScheme": "http",
       "ServiceName": "user_profile",
-      "UpstreamPathTemplate": "/Values/UploadsProfilePic/",
+      "UpstreamPathTemplate": "/Values/UploadsProfilePic",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
+    },
+    {
+      "DownstreamPathTemplate": "/Values/QuizResult/{catchAll}",
+      "DownstreamScheme": "http",
+      "ServiceName": "user_profile",
+      "UpstreamPathTemplate": "/Values/QuizResult/{catchAll}",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
     },
 
