@@ -21,6 +21,8 @@
       "UpstreamPathTemplate": "/socialSignIn",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
     },
+
+    
     {
       "DownstreamPathTemplate": "/",
       "DownstreamScheme": "http",
