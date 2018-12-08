@@ -46,7 +46,7 @@
     },
     
     {
-      "DownstreamPathTemplate": "/profile",
+      "DownstreamPathTemplate": "/profile/{catchAll}",
       "DownstreamScheme": "http",
       "ServiceName": "potentiometer-contributor-learner-frontend",
       "UpstreamPathTemplate": "/profile/{catchAll}",
