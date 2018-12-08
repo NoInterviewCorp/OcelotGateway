@@ -59,6 +59,13 @@
       "UpstreamPathTemplate": "/profile",
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
     },
+    {
+      "DownstreamPathTemplate": "/profile",
+      "DownstreamScheme": "http",
+      "ServiceName": "potentiometer-contributor-learner-frontend",
+      "UpstreamPathTemplate": "/profile/",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ]
+    },
 
 
 
